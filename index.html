@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PURI PURI STICKER BOOTH</title>
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=DynaPuff:wght@400;700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sparkle"></canvas>
+
+<!-- ม่านเปิดตู้ -->
+<div id="curtain" class="curtain">
+  <div class="curtain-left"></div>
+  <div class="curtain-right"></div>
+  <div class="neon-sign">
+    <div class="neon-top">˚₊‧꒰ა PURI PURI ໒꒱ ‧₊˚</div>
+    <h1>STICKER BOOTH</h1>
+    <p>ตู้ถ่ายรูปเปิดกล้องได้จริงนะ แตะเลย</p>
+    <button id="openBtn" class="coin-btn">หยอดเหรียญเปิดตู้ 🪙</button>
+    <small>ต้องกดอนุญาตกล้องนะ</small>
+  </div>
+</div>
+
+<!-- ตัวตู้ -->
+<main class="booth">
+  <header class="booth-head">
+    <div class="lamp"></div>
+    <div class="head-title">[ ♡ CAM_01 : LIVE ♡ ] PURI CAM</div>
+    <div class="rec"><span></span> REC <b id="clock">00:00</b></div>
+  </header>
+
+  <section class="stage">
+    <div class="cam-frame">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="live"></canvas>
+      <!-- ฟิลเตอร์หน้า : ขยับตาม CSS -->
+      <div id="faceFilter" class="face-filter"></div>
+      <div class="scan"></div>
+      <div class="flash" id="flash"></div>
+      <div class="count" id="count"></div>
+      <div class="focus-box"></div>
+    </div>
+
+    <div class="control-panel">
+      <p class="label">-- โทนสีผิวรูป --</p>
+      <div class="row" id="toneRow">
+        <button data-tone="none" class="chip active">สดใส</button>
+        <button data-tone="pink" class="chip">ชมพูพีช</button>
+        <button data-tone="milk" class="chip">นมนุ่ม</button>
+        <button data-tone="retro" class="chip">ฟิล์มเก่า</button>
+        <button data-tone="cold" class="chip">ฟ้าใส</button>
+        <button data-tone="bw" class="chip">ขาวดำ</button>
+      </div>
+
+      <p class="label">-- ฟิลเตอร์หน้าตะมุตะมิ --</p>
+      <div class="row" id="faceRow">
+        <button data-face="none" class="chip active">หน้าเปลือย</button>
+        <button data-face="cat">หูแมว ૮₍˃̵֊ ˂̵ ₎ა</button>
+        <button data-face="bow">โบว์ใหญ่ 🎀</button>
+        <button data-face="blush">แก้มแดง ꒰ᐢ⸝⸝•༝•⸝⸝ᐢ꒱</button>
+        <button data-face="star">ดาววิ้ง ✧</button>
+        <button data-face="bear">หมีน้อย</button>
+      </div>
+
+      <div class="shutter-row">
+        <button id="shotBtn" class="shutter">กดถ่าย 📸</button>
+        <button id="switchBtn" class="mini">สลับกล้อง</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="print-area">
+    <p class="label">𓍯𓂃𓏧♡ โพลารอยด์ของเรา ♡𓏧𓂃𓍯</p>
+    <div id="strip" class="strip"></div>
+
+    <p class="label">-- เลือกกรอบ --</p>
+    <div class="row" id="frameRow">
+      <button data-frame="white" class="chip active">ขาวคลาสสิก</button>
+      <button data-frame="pink">ชมพูไปเลย</button>
+      <button data-frame="lace">ลูกไม้</button>
+      <button data-frame="film">ฟิล์มดำ</button>
+      <button data-frame="ticket">ตั๋วฉีก</button>
+    </div>
+
+    <p class="label">-- แตะสติกเกอร์แล้วแตะบนรูปเพื่อแปะ --</p>
+    <div class="row sticker-tray" id="stickerTray">
+      <button>🎀</button><button>𐙚</button><button>✧</button><button>🐰</button><button>🍓</button><button>🧸</button><button>💌</button><button>⭐</button><button>🌷</button><button>🫧</button>
+    </div>
+
+    <div class="final-row">
+      <button id="saveBtn" class="coin-btn small">บันทึก PNG</button>
+      <button id="printBtn" class="coin-btn small pink">ปริ้นท์เลย 🖨️</button>
+    </div>
+    <p class="hint">แตะที่รูปเพื่อเลือกใบที่จะแต่ง / ลากสติกเกอร์บนรูปได้นะ</p>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
